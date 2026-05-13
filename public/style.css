@@ -1,0 +1,40 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #0a0a0a;
+    /* Linije raspoređene na tačno 1cm razmaka (10mm) */
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10mm, rgba(0, 82, 159, 0.2) 10mm, rgba(0, 82, 159, 0.2) 10.5mm, transparent 10.5mm, transparent 20mm, rgba(255, 206, 0, 0.2) 20mm, rgba(255, 206, 0, 0.2) 20.5mm, transparent 20.5mm, transparent 30mm, rgba(239, 51, 64, 0.2) 30mm, rgba(239, 51, 64, 0.2) 30.5mm, transparent 30.5mm, transparent 40mm, rgba(0, 154, 73, 0.2) 40mm, rgba(0, 154, 73, 0.2) 40.5mm);
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+h1 { text-align: center; padding: 40px; font-size: 3.5rem; letter-spacing: 8px; margin: 0; color: #00529f; }
+
+.main-container { display: flex; justify-content: center; gap: 25px; padding: 100px 20px; flex-wrap: wrap; }
+
+.category-window { 
+    width: 320px; height: 220px; background: rgba(20, 20, 20, 0.95); 
+    border: 2px solid #333; display: flex; align-items: center; 
+    justify-content: center; font-size: 1.6rem; font-weight: bold; 
+    cursor: pointer; transition: 0.4s; border-radius: 12px;
+}
+.category-window:hover { transform: scale(1.05); border-color: #00529f; box-shadow: 0 0 30px rgba(0, 82, 159, 0.4); }
+
+.sub-section { padding: 40px; text-align: center; }
+.back-btn { background: #222; color: #aaa; border: 1px solid #444; padding: 8px 15px; cursor: pointer; margin-bottom: 25px; border-radius: 4px; }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1400px; margin: 0 auto; }
+.product-card { background: rgba(30, 30, 30, 0.98); border: 1px solid #444; padding: 25px; border-radius: 10px; text-align: left; }
+
+details { margin: 15px 0; font-size: 14px; color: #bbb; line-height: 1.5; }
+summary { cursor: pointer; color: #00529f; font-weight: bold; }
+
+button:not(.back-btn) { width: 100%; padding: 12px; background: #00529f; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+button:hover:not(.back-btn) { background: #003d7a; }
+
+/* MODAL - SAKRIVEN POČETNO */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 999; display: none; align-items: center; justify-content: center; }
+.modal-content { background: #111; padding: 40px; border-radius: 12px; border: 2px solid #00529f; width: 330px; display: flex; flex-direction: column; gap: 15px; }
+input { padding: 12px; background: #222; border: 1px solid #444; color: white; border-radius: 6px; }
+.cancel-btn { background: #ef3340 !important; }
