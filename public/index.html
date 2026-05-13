@@ -8,7 +8,12 @@
 </head>
 <body>
 
-    <h1>COREKEYS</h1>
+    <header>
+        <h1>COREKEYS</h1>
+        <div class="kontakt-info">
+            <p>Kontakt za narudžbe: <strong>arminarman022@gmail.com</strong></p>
+        </div>
+    </header>
 
     <div class="main-container" id="main-menu">
         <div class="category-window" onclick="prikaziSekciju('windows-sekcija')">WINDOWS</div>
@@ -16,75 +21,34 @@
         <div class="category-window" onclick="prikaziSekciju('games-sekcija')">GAMES</div>
     </div>
 
-    <!-- WINDOWS (10 artikala) -->
+    <!-- WINDOWS -->
     <div id="windows-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD</button>
         <div class="products-grid">
-            <div class="product-card"><h3>Windows 11 Pro</h3><button onclick="otvoriNarudzbu('Windows 11 Pro')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 11 Home</h3><button onclick="otvoriNarudzbu('Windows 11 Home')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 11 Enterprise</h3><button onclick="otvoriNarudzbu('Windows 11 Enterprise')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 11 Education</h3><button onclick="otvoriNarudzbu('Windows 11 Education')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 11 Pro N</h3><button onclick="otvoriNarudzbu('Windows 11 Pro N')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 10 Pro</h3><button onclick="otvoriNarudzbu('Windows 10 Pro')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 10 Home</h3><button onclick="otvoriNarudzbu('Windows 10 Home')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 10 Enterprise LTSC</h3><button onclick="otvoriNarudzbu('Windows 10 Enterprise LTSC')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 10 Pro Workstation</h3><button onclick="otvoriNarudzbu('Windows 10 Pro Workstation')">NARUČI ARTIKAL</button></div>
-            <div class="product-card"><h3>Windows 10 Education</h3><button onclick="otvoriNarudzbu('Windows 10 Education')">NARUČI ARTIKAL</button></div>
+            <div class="product-card"><h3>Windows 11 Pro</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>Windows 11 Home</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>Windows 10 Pro</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>Windows 10 Home</h3><p>Pošaljite upit na email</p></div>
+            <!-- Dodaj ostale artikle ovdje po istom principu -->
         </div>
     </div>
 
-    <!-- OFFICE & ANTIVIRUS (10 artikala) -->
+    <!-- OFFICE -->
     <div id="office-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD</button>
         <div class="products-grid">
-            <div class="product-card"><h3>Office 2021 Pro Plus</h3><button onclick="otvoriNarudzbu('Office 2021 Pro Plus')">NARUČI</button></div>
-            <div class="product-card"><h3>Office 2019 Pro Plus</h3><button onclick="otvoriNarudzbu('Office 2019 Pro Plus')">NARUČI</button></div>
-            <div class="product-card"><h3>Office 2016 Pro Plus</h3><button onclick="otvoriNarudzbu('Office 2016 Pro Plus')">NARUČI</button></div>
-            <div class="product-card"><h3>Office 365 Account</h3><button onclick="otvoriNarudzbu('Office 365 Account')">NARUČI</button></div>
-            <div class="product-card"><h3>Office for Mac 2021</h3><button onclick="otvoriNarudzbu('Office for Mac 2021')">NARUČI</button></div>
-            <div class="product-card"><h3>ESET NOD32 (1 Godina)</h3><button onclick="otvoriNarudzbu('ESET NOD32')">NARUČI</button></div>
-            <div class="product-card"><h3>Kaspersky Total Security</h3><button onclick="otvoriNarudzbu('Kaspersky Total Security')">NARUČI</button></div>
-            <div class="product-card"><h3>Bitdefender Total Security</h3><button onclick="otvoriNarudzbu('Bitdefender Total Security')">NARUČI</button></div>
-            <div class="product-card"><h3>Avast Premium Security</h3><button onclick="otvoriNarudzbu('Avast Premium Security')">NARUČI</button></div>
-            <div class="product-card"><h3>Malwarebytes Premium</h3><button onclick="otvoriNarudzbu('Malwarebytes Premium')">NARUČI</button></div>
+            <div class="product-card"><h3>Office 2021 Pro Plus</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>Office 2019 Pro Plus</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>ESET NOD32</h3><p>Pošaljite upit na email</p></div>
         </div>
     </div>
 
-    <!-- GAMES (20 artikala) -->
+    <!-- GAMES -->
     <div id="games-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD</button>
         <div class="products-grid">
-            <div class="product-card"><h3>GTA V Premium</h3><button onclick="otvoriNarudzbu('GTA V')">NARUČI</button></div>
-            <div class="product-card"><h3>FC 24 (FIFA)</h3><button onclick="otvoriNarudzbu('FC 24')">NARUČI</button></div>
-            <div class="product-card"><h3>Red Dead Redemption 2</h3><button onclick="otvoriNarudzbu('RDR 2')">NARUČI</button></div>
-            <div class="product-card"><h3>Minecraft Java & Bedrock</h3><button onclick="otvoriNarudzbu('Minecraft')">NARUČI</button></div>
-            <div class="product-card"><h3>Cyberpunk 2077</h3><button onclick="otvoriNarudzbu('Cyberpunk 2077')">NARUČI</button></div>
-            <div class="product-card"><h3>Elden Ring</h3><button onclick="otvoriNarudzbu('Elden Ring')">NARUČI</button></div>
-            <div class="product-card"><h3>Forza Horizon 5</h3><button onclick="otvoriNarudzbu('Forza 5')">NARUČI</button></div>
-            <div class="product-card"><h3>Call of Duty MW3</h3><button onclick="otvoriNarudzbu('COD MW3')">NARUČI</button></div>
-            <div class="product-card"><h3>CS 2 Prime Status</h3><button onclick="otvoriNarudzbu('CS 2 Prime')">NARUČI</button></div>
-            <div class="product-card"><h3>God of War (2018)</h3><button onclick="otvoriNarudzbu('God of War')">NARUČI</button></div>
-            <div class="product-card"><h3>Hogwarts Legacy</h3><button onclick="otvoriNarudzbu('Hogwarts Legacy')">NARUČI</button></div>
-            <div class="product-card"><h3>Spider-Man Remastered</h3><button onclick="otvoriNarudzbu('Spider-Man')">NARUČI</button></div>
-            <div class="product-card"><h3>The Witcher 3: Wild Hunt</h3><button onclick="otvoriNarudzbu('Witcher 3')">NARUČI</button></div>
-            <div class="product-card"><h3>Rust</h3><button onclick="otvoriNarudzbu('Rust')">NARUČI</button></div>
-            <div class="product-card"><h3>Euro Truck Simulator 2</h3><button onclick="otvoriNarudzbu('ETS 2')">NARUČI</button></div>
-            <div class="product-card"><h3>Resident Evil 4 Remake</h3><button onclick="otvoriNarudzbu('RE 4')">NARUČI</button></div>
-            <div class="product-card"><h3>Assetto Corsa Comp.</h3><button onclick="otvoriNarudzbu('Assetto Corsa')">NARUČI</button></div>
-            <div class="product-card"><h3>Mortal Kombat 1</h3><button onclick="otvoriNarudzbu('MK 1')">NARUČI</button></div>
-            <div class="product-card"><h3>Battlefield 2042</h3><button onclick="otvoriNarudzbu('BF 2042')">NARUČI</button></div>
-            <div class="product-card"><h3>Farming Simulator 22</h3><button onclick="otvoriNarudzbu('FS 22')">NARUČI</button></div>
-        </div>
-    </div>
-
-    <!-- MODAL (NARUDŽBA) -->
-    <div id="order-modal" class="modal" style="display:none;">
-        <div class="modal-content">
-            <h2 id="modal-title"></h2>
-            <input type="email" id="user-email" placeholder="Unesite Vaš Email" required>
-            <input type="text" id="kliker-kod" placeholder="Kliker bon (14 brojeva)" maxlength="14" required>
-            <button class="finish-btn" onclick="posaljiPodatke()">POŠALJI NARUDŽBU</button>
-            <button class="cancel-btn" onclick="zatvoriModal()">ODUSTANI</button>
+            <div class="product-card"><h3>GTA V Premium</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card"><h3>FC 24 (FIFA)</h3><p>Pošaljite upit na email</p></div>
         </div>
     </div>
 
@@ -93,41 +57,11 @@
             document.getElementById('main-menu').style.display = 'none';
             document.getElementById(id).style.display = 'block';
         }
-        function nazad() { location.reload(); }
-        function otvoriNarudzbu(naziv) {
-            document.getElementById('modal-title').innerText = naziv;
-            document.getElementById('order-modal').style.display = 'flex';
-        }
-        function zatvoriModal() {
-            document.getElementById('order-modal').style.display = 'none';
-        }
-
-        async function posaljiPodatke() {
-            const email = document.getElementById('user-email').value;
-            const kod = document.getElementById('kliker-kod').value;
-            const artikal = document.getElementById('modal-title').innerText;
-
-            if(kod.length !== 14 || isNaN(kod)) {
-                alert("Kliker bon mora imati tačno 14 brojeva!");
-                return;
-            }
-
-            try {
-                const res = await fetch('/send-email', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ email, kod, artikal })
-                });
-                
-                if(res.ok) {
-                    alert("Narudžba je uspješno poslana! Provjerite svoj email.");
-                    zatvoriModal();
-                } else {
-                    alert("Greška pri slanju narudžbe.");
-                }
-            } catch (e) {
-                alert("Server nije dostupan.");
-            }
+        function nazad() {
+            document.getElementById('windows-sekcija').style.display = 'none';
+            document.getElementById('office-sekcija').style.display = 'none';
+            document.getElementById('games-sekcija').style.display = 'none';
+            document.getElementById('main-menu').style.display = 'flex';
         }
     </script>
 </body>
