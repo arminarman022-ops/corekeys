@@ -1,59 +1,83 @@
-/* Kartica proizvoda kao kontejner za sliku */
+body {
+    background-color: #0055A4; /* Plava boja dresa BiH */
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 40px;
+    border-bottom: 2px solid #FFD700;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Ovo šalje naslov lijevo, a email desno */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.kontakt-desno {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Prozori (Kartice) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
 .product-card {
-    position: relative; /* Bitno za pozicioniranje opisa */
+    position: relative;
+    height: 380px;
     background: #000;
     border: 1px solid #FFD700;
-    border-radius: 10px;
-    overflow: hidden; /* Reže sve što izlazi van okvira */
-    height: 350px; /* Fiksna visina za sve prozore */
-    transition: transform 0.3s;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.product-card:hover {
-    transform: scale(1.02);
-}
-
-/* Slika preko cijelog prozora */
 .product-img {
     width: 100%;
-    height: 100%; /* Ispuni cijelu visinu kartice */
-    object-fit: cover; /* Razvuci sliku bez deformacije */
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Naslov preko slike (na dnu) */
 .product-card h3 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     margin: 0;
-    padding: 10px 0;
-    font-size: 1.2rem;
-    z-index: 2;
-}
-
-/* Opis koji se pojavljuje (kao padajući meni odozdo) */
-.product-description {
-    position: absolute;
-    bottom: -100%; /* Sakriven ispod kartice */
-    left: 0;
-    width: 100%;
-    height: 60%; /* Koliko visoko se penje opis */
-    background: rgba(0, 85, 164, 0.95); /* Boja dresa BiH sa malo providnosti */
-    color: white;
-    padding: 15px;
-    box-sizing: border-box;
-    transition: bottom 0.4s ease; /* Efekat klizanja */
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px;
     text-align: center;
 }
 
-/* Kad se mišem pređe preko kartice, opis "izleti" gore */
+.product-description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: rgba(0, 85, 164, 0.95);
+    padding: 20px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 .product-card:hover .product-description {
     bottom: 0;
 }
