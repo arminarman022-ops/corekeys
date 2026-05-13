@@ -16,8 +16,38 @@
         <div class="category-window" onclick="prikaziSekciju('games-sekcija')">GAMES</div>
     </div>
 
-    <!-- Sekcije proizvoda ostaju iste kao u tvom kodu -->
+    <!-- WINDOWS SEKCIJA -->
+    <div id="windows-sekcija" class="sub-section" style="display:none;">
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <div class="products-grid">
+            <div class="product-card"><h3>Windows 11 Pro</h3><button onclick="otvoriNarudzbu('Windows 11 Pro')">NARUČI ARTIKAL</button></div>
+            <div class="product-card"><h3>Windows 11 Home</h3><button onclick="otvoriNarudzbu('Windows 11 Home')">NARUČI ARTIKAL</button></div>
+            <div class="product-card"><h3>Windows 10 Pro</h3><button onclick="otvoriNarudzbu('Windows 10 Pro')">NARUČI ARTIKAL</button></div>
+            <div class="product-card"><h3>Windows 10 Home</h3><button onclick="otvoriNarudzbu('Windows 10 Home')">NARUČI ARTIKAL</button></div>
+        </div>
+    </div>
 
+    <!-- OFFICE SEKCIJA -->
+    <div id="office-sekcija" class="sub-section" style="display:none;">
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <div class="products-grid">
+            <div class="product-card"><h3>Office 2021 Pro Plus</h3><button onclick="otvoriNarudzbu('Office 2021 Pro Plus')">NARUČI</button></div>
+            <div class="product-card"><h3>Office 2019 Pro Plus</h3><button onclick="otvoriNarudzbu('Office 2019 Pro Plus')">NARUČI</button></div>
+            <div class="product-card"><h3>ESET NOD32 (1 Godina)</h3><button onclick="otvoriNarudzbu('ESET NOD32')">NARUČI</button></div>
+        </div>
+    </div>
+
+    <!-- GAMES SEKCIJA -->
+    <div id="games-sekcija" class="sub-section" style="display:none;">
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
+        <div class="products-grid">
+            <div class="product-card"><h3>GTA V Premium</h3><button onclick="otvoriNarudzbu('GTA V')">NARUČI</button></div>
+            <div class="product-card"><h3>FC 24 (FIFA)</h3><button onclick="otvoriNarudzbu('FC 24')">NARUČI</button></div>
+            <div class="product-card"><h3>CS 2 Prime Status</h3><button onclick="otvoriNarudzbu('CS 2 Prime')">NARUČI</button></div>
+        </div>
+    </div>
+
+    <!-- MODAL ZA NARUDŽBU -->
     <div id="order-modal" class="modal" style="display:none;">
         <div class="modal-content">
             <h2 id="modal-title"></h2>
@@ -53,7 +83,6 @@
             }
 
             try {
-                // Ispravljena ruta na /send-email
                 const res = await fetch('/send-email', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
