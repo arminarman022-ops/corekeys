@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COREKEYS BIH</title>
+    <title>COREKEYS BIH - PREMIUM KEYS</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --carbon: #0a0a0a;
-            --line-gap: 10mm; /* Razmak između linija 1cm */
+            --line-gap: 10mm; /* Razmak 1cm između linija */
         }
 
         body {
             background-color: var(--carbon);
-            /* Karbon tekstura sa obojenim dijagonalnim linijama */
+            /* Karbon pozadina sa dijagonalnim linijama: crvena, plava, žuta, zelena */
             background-image: 
                 repeating-linear-gradient(135deg, 
                     transparent, transparent calc(var(--line-gap) - 2px), 
-                    #ff0000 calc(var(--line-gap) - 2px), #ff0000 var(--line-gap), /* Crvena */
+                    #ff0000 calc(var(--line-gap) - 2px), #ff0000 var(--line-gap), 
                     transparent var(--line-gap), transparent calc(var(--line-gap) * 2 - 2px),
-                    #0000ff calc(var(--line-gap) * 2 - 2px), #0000ff calc(var(--line-gap) * 2), /* Plava */
+                    #0000ff calc(var(--line-gap) * 2 - 2px), #0000ff calc(var(--line-gap) * 2),
                     transparent calc(var(--line-gap) * 2), transparent calc(var(--line-gap) * 3 - 2px),
-                    #ffff00 calc(var(--line-gap) * 3 - 2px), #ffff00 calc(var(--line-gap) * 3), /* Žuta */
+                    #ffff00 calc(var(--line-gap) * 3 - 2px), #ffff00 calc(var(--line-gap) * 3),
                     transparent calc(var(--line-gap) * 3), transparent calc(var(--line-gap) * 4 - 2px),
-                    #00ff00 calc(var(--line-gap) * 4 - 2px), #00ff00 calc(var(--line-gap) * 4) /* Zelena */
+                    #00ff00 calc(var(--line-gap) * 4 - 2px), #00ff00 calc(var(--line-gap) * 4)
                 );
             color: white;
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         /* Email u uglu */
@@ -39,51 +38,54 @@
             right: 20px;
             font-weight: bold;
             color: #fff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         /* Ime stranice na sredini */
         .site-title {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            margin-top: 60px;
-            letter-spacing: 8px;
+            font-size: 3.5rem;
+            margin-top: 50px;
+            letter-spacing: 5px;
             color: #fff;
-            text-shadow: 2px 2px 20px rgba(255,0,0,0.8);
+            text-shadow: 0 0 15px #ff0000;
         }
 
         /* Glavna tri prozora */
         .main-menu {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
+            gap: 20px;
+            margin-top: 40px;
             padding: 20px;
         }
 
         .main-box {
-            width: 300px;
-            height: 180px;
-            background: rgba(0,0,0,0.8);
+            width: 320px;
+            height: 160px;
+            background: rgba(0,0,0,0.85);
             border: 2px solid #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
             text-align: center;
+            text-transform: uppercase;
         }
 
         .main-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px rgba(255,255,255,0.4);
             border-color: #ff0000;
+            box-shadow: 0 0 20px rgba(255,0,0,0.6);
+            transform: scale(1.05);
         }
 
-        /* Sekcije artikala */
+        /* Sekcije */
         .section-container {
             display: none;
             padding: 40px;
@@ -91,17 +93,18 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         /* Prozor artikla */
         .product-card {
             position: relative;
-            height: 350px;
-            background: #111;
+            height: 400px;
+            background: #000;
             border: 1px solid #444;
             overflow: hidden;
+            border-radius: 4px;
         }
 
         .product-img {
@@ -110,48 +113,55 @@
             object-fit: cover;
         }
 
-        /* Ime proizvoda u dnu */
+        /* Naziv artikla - FIKSNI TEKST U DNU */
         .product-label {
             position: absolute;
             bottom: 0;
             width: 100%;
-            background: rgba(0,0,0,0.8);
-            padding: 10px;
+            background: rgba(0,0,0,0.9);
+            padding: 12px;
             text-align: center;
+            font-size: 1.2rem;
             font-weight: bold;
-            z-index: 2;
+            z-index: 5;
+            border-top: 1px solid #333;
         }
 
-        /* Padajući meni sa opisom */
+        /* PADUJUĆI MENI SA OPISOM */
         .desc-menu {
             position: absolute;
-            bottom: -100%;
+            bottom: -100%; /* Sakriven */
             left: 0;
             width: 100%;
-            height: 60%;
-            background: rgba(20,20,20,0.95);
-            padding: 15px;
+            height: 75%;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px;
             box-sizing: border-box;
-            transition: 0.4s ease;
-            z-index: 3;
-            border-top: 2px solid #ff0000;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            border-top: 3px solid #ff0000;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
         }
 
         .product-card:hover .desc-menu {
-            bottom: 0;
+            bottom: 0; /* Izlazi gore */
         }
 
+        .desc-menu h4 { color: #ff0000; margin-bottom: 10px; text-transform: uppercase; }
+        .desc-menu p { font-size: 0.95rem; line-height: 1.4; margin: 0; }
+
         .back-btn {
-            background: #fff;
-            color: #000;
-            padding: 10px 25px;
+            background: #ff0000;
+            color: white;
+            padding: 10px 30px;
             border: none;
             cursor: pointer;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -167,47 +177,108 @@
     <div class="main-box" onclick="openSection('game-sec')">GAME</div>
 </div>
 
-<!-- WINDOWS SEKCIJA -->
+<!-- WINDOWS SEKCIJA (10 PROZORA) -->
 <div id="win-sec" class="section-container">
     <button class="back-btn" onclick="goHome()">← NAZAD</button>
     <div class="grid-container">
-        <!-- 5x Win 11, 5x Win 10 -->
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Pro</div><div class="desc-menu"><p>Originalna licenca za Win 11 Pro verziju.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Home</div><div class="desc-menu"><p>Licenca za Win 11 Home korisnike.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Enterprise</div><div class="desc-menu"><p>Za poslovne sisteme.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Education</div><div class="desc-menu"><p>Verzija za škole.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Pro N</div><div class="desc-menu"><p>Pro verzija bez media plejera.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Pro</div><div class="desc-menu"><p>Najpopularnija Win 10 verzija.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Home</div><div class="desc-menu"><p>Standardna verzija.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Enterprise</div><div class="desc-menu"><p>Stabilna poslovna verzija.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Pro Workstation</div><div class="desc-menu"><p>Za moćne mašine.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Education</div><div class="desc-menu"><p>Školska verzija.</p></div></div>
+        <!-- Windows 11 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Pro</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>BitLocker zaštita, Remote Desktop, podrška za Android aplikacije i najnapredniji gaming mod.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Home</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Novi moderan dizajn, Auto HDR za igre, sigurno surfanje i brza pretraga fajlova.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Enterprise</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Maksimalna sigurnost podataka, upravljanje cloud sistemima i napredna zaštita identiteta.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Education</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Alati za lakše učenje, digitalna olovka i sigurno okruženje za učenike i studente.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 11 Pro N</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Lagana verzija bez Media Playera, idealna za korisnike koji žele sami birati multimediju.</p></div></div>
+        <!-- Windows 10 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Pro</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Provjerena stabilnost, Hyper-V virtuelizacija i najšira kompatibilnost sa svim programima.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Home</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Brz start, Windows Hello prijava licem i savršen balans za svakodnevnu upotrebu.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Enterprise LTSC</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Verzija bez suvišnih ažuriranja, fokus na stabilnost i dugoročnu podršku sistema.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Pro Workstation</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Podrška za serverske procesore i velike količine RAM-a za najteže poslove.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Windows 10 Education</div><div class="desc-menu"><h4>Najbolje stvari:</h4><p>Sve funkcije Pro verzije optimizovane za obrazovne ustanove i rad u učionici.</p></div></div>
     </div>
 </div>
 
-<!-- OFFICE I ANTIVIRUS SEKCIJA -->
+<!-- OFFICE I ANTIVIRUS SEKCIJA (10 PROZORA) -->
 <div id="off-sec" class="section-container">
     <button class="back-btn" onclick="goHome()">← NAZAD</button>
     <div class="grid-container">
-        <!-- 5x Office, 5x Antivirus -->
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2021 Pro Plus</div><div class="desc-menu"><p>Kompletan Office paket.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2019 Pro Plus</div><div class="desc-menu"><p>Stabilna verzija paketa.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 365 Account</div><div class="desc-menu"><p>Godišnji nalog.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2021 Mac</div><div class="desc-menu"><p>Verzija za Apple.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2016 Pro</div><div class="desc-menu"><p>Klasični paket.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">ESET NOD32</div><div class="desc-menu"><p>Antivirusna zaštita.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Kaspersky</div><div class="desc-menu"><p>Total Security.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Bitdefender</div><div class="desc-menu"><p>Vrhunska zaštita.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Avast Premium</div><div class="desc-menu"><p>Napredna sigurnost.</p></div></div>
-        <div class="product-card"><img src="" class="product-img"><div class="product-label">Malwarebytes</div><div class="desc-menu"><p>Anti-malware alat.</p></div></div>
+        <!-- Office -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2021 Pro Plus</div><div class="desc-menu"><h4>Uključuje:</h4><p>Word, Excel, PowerPoint, Outlook, Publisher i Access. Trajna licenca bez pretplate.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2019 Pro Plus</div><div class="desc-menu"><h4>Uključuje:</h4><p>Klasični alati za rad, fokus na stabilnost i offline rad na jednom računaru.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 365 Personal</div><div class="desc-menu"><h4>Uključuje:</h4><p>Uvijek najnoviji Office alati, 1TB Cloud prostora i rad na svim uređajima (mobitel, tablet).</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office for Mac 2021</div><div class="desc-menu"><h4>Uključuje:</h4><p>Potpuna podrška za macOS, optimizovano za M1 i M2 čipove i vrhunska produktivnost.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Office 2016 Home & Business</div><div class="desc-menu"><h4>Uključuje:</h4><p>Pouzdan paket za starije sisteme, uključuje sve bitne funkcije za kancelarijski posao.</p></div></div>
+        <!-- Antivirus -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">ESET NOD32 Antivirus</div><div class="desc-menu"><h4>Bitno:</h4><p>Lagana zaštita koja ne usporava računar, vrhunska odbrana od virusa i phishinga.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Kaspersky Total Security</div><div class="desc-menu"><h4>Bitno:</h4><p>Kompletna zaštita porodice, sigurno online plaćanje i roditeljska kontrola.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Bitdefender Total Security</div><div class="desc-menu"><h4>Bitno:</h4><p>Nagrađivana zaštita, VPN uključen, štiti privatnost vaših podataka i web kamere.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Avast Premium Security</div><div class="desc-menu"><h4>Bitno:</h4><p>Zaštita od hakerskih napada, sigurnost WiFi mreže i automatsko ažuriranje aplikacija.</p></div></div>
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Malwarebytes Premium</div><div class="desc-menu"><h4>Bitno:</h4><p>Čisti ono što obični antivirusi propuste, uklanja malware i štiti od ransomwarea.</p></div></div>
     </div>
 </div>
 
-<!-- GAME SEKCIJA (30 PROZORA) -->
+<!-- GAME SEKCIJA (30 NAJBOLJIH IGARA) -->
 <div id="game-sec" class="section-container">
     <button class="back-btn" onclick="goHome()">← NAZAD</button>
     <div class="grid-container" id="game-grid">
-        <!-- Generisano skriptom zbog 30 komada -->
+        <!-- Igra 1 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">GTA V Premium</div><div class="desc-menu"><h4>Bitno:</h4><p>Uključuje Story Mode i GTA Online sa 1,000,000$ bonusa za početak karijere.</p></div></div>
+        <!-- Igra 2 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">FC 25 (FIFA)</div><div class="desc-menu"><h4>Bitno:</h4><p>Najnoviji fudbal, Rush mod 5v5, unapređen Ultimate Team i licencirani klubovi.</p></div></div>
+        <!-- Igra 3 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Red Dead Redemption 2</div><div class="desc-menu"><h4>Bitno:</h4><p>Najbolja priča na divljem zapadu, nevjerovatna grafika i ogroman open world svijet.</p></div></div>
+        <!-- Igra 4 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Elden Ring</div><div class="desc-menu"><h4>Bitno:</h4><p>Igra godine, izazovna borba, epski bossovi i mitski svijet Georga R.R. Martina.</p></div></div>
+        <!-- Igra 5 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Minecraft Java & Bedrock</div><div class="desc-menu"><h4>Bitno:</h4><p>Obje verzije igre, beskrajna gradnja, preživljavanje i igra sa prijateljima.</p></div></div>
+        <!-- Igra 6 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Cyberpunk 2077</div><div class="desc-menu"><h4>Bitno:</h4><p>Futuristički Night City, unapređen gameplay 2.0 i vrhunska RPG avantura.</p></div></div>
+        <!-- Igra 7 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">God of War</div><div class="desc-menu"><h4>Bitno:</h4><p>Kratos u nordijskoj mitologiji, brutalna borba i emotivna priča o ocu i sinu.</p></div></div>
+        <!-- Igra 8 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Forza Horizon 5</div><div class="desc-menu"><h4>Bitno:</h4><p>Prelijepi Meksiko, preko 500 automobila i najzabavnije trkačko iskustvo.</p></div></div>
+        <!-- Igra 9 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Counter-Strike 2 Prime</div><div class="desc-menu"><h4>Bitno:</h4><p>Prime status, pristup rangiranim mečevima i sedmični dropovi skinova.</p></div></div>
+        <!-- Igra 10 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Hogwarts Legacy</div><div class="desc-menu"><h4>Bitno:</h4><p>Postanite čarobnjak u Harry Potter svijetu, istražite dvorac i učite magije.</p></div></div>
+        <!-- Igra 11 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Spider-Man Remastered</div><div class="desc-menu"><h4>Bitno:</h4><p>Akcija u New Yorku, vrhunska mehanika njištanja mrežom i epske borbe.</p></div></div>
+        <!-- Igra 12 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Resident Evil 4 Remake</div><div class="desc-menu"><h4>Bitno:</h4><p>Legendarni survival horor u potpuno novom grafičkom i tehničkom ruhu.</p></div></div>
+        <!-- Igra 13 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Rust</div><div class="desc-menu"><h4>Bitno:</h4><p>Surovo preživljavanje, gradnja baza, PVP borbe i timski rad na serverima.</p></div></div>
+        <!-- Igra 14 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">The Witcher 3: Wild Hunt</div><div class="desc-menu"><h4>Bitno:</h4><p>Geralt od Rivije u svojoj najvećoj potrazi, stotine sati vrhunskog RPG-a.</p></div></div>
+        <!-- Igra 15 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Euro Truck Simulator 2</div><div class="desc-menu"><h4>Bitno:</h4><p>Vozite kamione širom Evrope, upravljajte firmom i uživajte u realnoj simulaciji.</p></div></div>
+        <!-- Igra 16 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Mortal Kombat 1</div><div class="desc-menu"><h4>Bitno:</h4><p>Novi univerzum, brutalni Fatality potezi i novi sistem Kameo boraca.</p></div></div>
+        <!-- Igra 17 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Assetto Corsa Competizione</div><div class="desc-menu"><h4>Bitno:</h4><p>Profesionalna simulacija GT trka, realna fizika i zvanične GT3 staze.</p></div></div>
+        <!-- Igra 18 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Black Myth: Wukong</div><div class="desc-menu"><h4>Bitno:</h4><p>Akcioni RPG baziran na kineskoj mitologiji, nevjerovatna grafika i borba.</p></div></div>
+        <!-- Igra 19 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Call of Duty: Black Ops 6</div><div class="desc-menu"><h4>Bitno:</h4><p>Najnoviji COD, intenzivan Multiplayer, Zombies mod i špijunska kampanja.</p></div></div>
+        <!-- Igra 20 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Farming Simulator 25</div><div class="desc-menu"><h4>Bitno:</h4><p>Izgradite farmu iz snova, uzgajajte nove usjeve i vozite modernu mašineriju.</p></div></div>
+        <!-- Igra 21 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Days Gone</div><div class="desc-menu"><h4>Bitno:</h4><p>Preživljavanje na motoru protiv hordi zombija u ogromnom otvorenom svijetu.</p></div></div>
+        <!-- Igra 22 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">NBA 2K25</div><div class="desc-menu"><h4>Bitno:</h4><p>Najrealnija košarka, unapređen MyCareer i City mod za online igranje.</p></div></div>
+        <!-- Igra 23 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Horizon Zero Dawn</div><div class="desc-menu"><h4>Bitno:</h4><p>Aloy u svijetu robotskih dinosaurusa, prelijepa priča i taktička borba.</p></div></div>
+        <!-- Igra 24 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Sekiro: Shadows Die Twice</div><div class="desc-menu"><h4>Bitno:</h4><p>Vrhunska akcija samuraja, precizna borba katanom i izazovni bossovi.</p></div></div>
+        <!-- Igra 25 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Baldur's Gate 3</div><div class="desc-menu"><h4>Bitno:</h4><p>Igra decenije, duboka priča gdje svaka tvoja odluka mijenja sudbinu svijeta.</p></div></div>
+        <!-- Igra 26 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">BeamNG.drive</div><div class="desc-menu"><h4>Bitno:</h4><p>Najrealnija simulacija oštećenja automobila i fizike vožnje na svijetu.</p></div></div>
+        <!-- Igra 27 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Sims 4 (Svi DLC-ovi)</div><div class="desc-menu"><h4>Bitno:</h4><p>Kreativnost bez granica, izgradite dom i vodite život svojih likova.</p></div></div>
+        <!-- Igra 28 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Dead by Daylight</div><div class="desc-menu"><h4>Bitno:</h4><p>Asimetrični horor 4v1, igrajte kao preživjeli ili kao kultni filmski ubica.</p></div></div>
+        <!-- Igra 29 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Sea of Thieves</div><div class="desc-menu"><h4>Bitno:</h4><p>Postani pirat, plovi morem sa prijateljima i traži skrivena blaga.</p></div></div>
+        <!-- Igra 30 -->
+        <div class="product-card"><img src="" class="product-img"><div class="product-label">Assassins Creed Mirage</div><div class="desc-menu"><h4>Bitno:</h4><p>Povratak korijenima, fokus na parkour i stealth ubistva u drevnom Bagdadu.</p></div></div>
     </div>
 </div>
 
@@ -216,19 +287,6 @@
         document.getElementById('home').style.display = 'none';
         document.querySelectorAll('.section-container').forEach(s => s.style.display = 'none');
         document.getElementById(id).style.display = 'block';
-        
-        if(id === 'game-sec') {
-            const grid = document.getElementById('game-grid');
-            grid.innerHTML = '';
-            for(let i=1; i<=30; i++) {
-                grid.innerHTML += `
-                    <div class="product-card">
-                        <img src="" class="product-img">
-                        <div class="product-label">Game Title ${i}</div>
-                        <div class="desc-menu"><p>Opis igre i ključa za aktivaciju.</p></div>
-                    </div>`;
-            }
-        }
     }
 
     function goHome() {
