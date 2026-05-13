@@ -1,47 +1,41 @@
-require('dotenv').config(); // Ovo mora biti na prvoj liniji
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Srednji slojevi za čitanje podataka
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Služi statične fajlove iz "public" foldera
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Konfiguracija transportera koristeći tvoje varijable sa Rendera
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Vuče arminarman022@gmail.com
-    pass: process.env.EMAIL_PASS  // Vuče dysohsqsxejhesrf
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
-// Ruta za obradu narudžbe
 app.post('/send-email', (req, res) => {
-  const { email, message, keyType } = req.body;
+  const { email, kod, artikal } = req.body;
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // Ti dobijaš obavijest o narudžbi
-    subject: `Nova narudžba ključa: ${keyType || 'Digitalni Proizvod'}`,
-    text: `Email kupca: ${email}\nPoruka: ${message}`
+    to: process.env.EMAIL_USER,
+    subject: `Nova narudžba: ${artikal}`,
+    text: `Email kupca: ${email}\nKliker bon kod: ${kod}\nArtikal: ${artikal}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log("Greška u logovima: ", error); // Ovo ćeš vidjeti u Render Logs
-      return res.status(500).send("Greska pri naruđbi");
+      console.log("Greška:", error);
+      return res.status(500).send("Greška pri narudžbi");
     }
-    console.log('Email uspješno poslan: ' + info.response);
-    res.send("Uspješno poslano! Provjerite svoj email.");
+    res.status(200).send("Uspješno poslano!");
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server uspješno pokrenut na portu ${PORT}`);
+  console.log(`Server pokrenut na portu ${PORT}`);
 });
