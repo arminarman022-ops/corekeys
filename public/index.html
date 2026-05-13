@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COREKEYS BIH</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Font za ljepši izgled -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>COREKEYS</h1>
-        <div class="kontakt-info">
-            <p>Kontakt za narudžbe: <strong>arminarman022@gmail.com</strong></p>
+    <header class="site-header">
+        <div class="header-content">
+            <h1 class="logo">COREKEYS</h1>
+            <div class="kontakt-desno">
+                <span>Kontakt: <strong>arminarman022@gmail.com</strong></span>
+            </div>
         </div>
     </header>
 
@@ -21,34 +25,56 @@
         <div class="category-window" onclick="prikaziSekciju('games-sekcija')">GAMES</div>
     </div>
 
-    <!-- WINDOWS -->
+    <!-- WINDOWS (Svi artikli sa prostorom za sliku i opis) -->
     <div id="windows-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
         <div class="products-grid">
-            <div class="product-card"><h3>Windows 11 Pro</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>Windows 11 Home</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>Windows 10 Pro</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>Windows 10 Home</h3><p>Pošaljite upit na email</p></div>
-            <!-- Dodaj ostale artikle ovdje po istom principu -->
+            <!-- Primjer kartice - Ponovi ovo za svaki artikal -->
+            <div class="product-card">
+                <img src="putanja_do_tvoje_slike.jpg" alt="Windows 11 Pro" class="product-img">
+                <h3>Windows 11 Pro</h3>
+                <div class="product-description">
+                    <p>Originalni digitalni ključ za Windows 11 Professional. Omogućava potpunu aktivaciju sistema, pristup svim sigurnosnim ažuriranjima i podršku za BitLocker enkripciju. Licenca je trajna.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="" alt="Windows 10 Pro" class="product-img">
+                <h3>Windows 10 Pro</h3>
+                <div class="product-description">
+                    <p>Najstabilnija verzija Windowsa za profesionalce. Podržava daljinski pristup, Azure Active Directory i kompletnu kontrolu nad ažuriranjima.</p>
+                </div>
+            </div>
+            <!-- Ovdje dodaj ostalih 8 Windows artikala na isti način -->
         </div>
     </div>
 
-    <!-- OFFICE -->
+    <!-- OFFICE SEKCIJA -->
     <div id="office-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
         <div class="products-grid">
-            <div class="product-card"><h3>Office 2021 Pro Plus</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>Office 2019 Pro Plus</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>ESET NOD32</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card">
+                <img src="" alt="Office 2021" class="product-img">
+                <h3>Office 2021 Pro Plus</h3>
+                <div class="product-description">
+                    <p>Najnoviji paket: Word, Excel, PowerPoint, Outlook. Trajna licenca bez pretplate. Jednokratna aktivacija putem vašeg Microsoft naloga.</p>
+                </div>
+            </div>
+            <!-- Dodaj ostale Office artikle -->
         </div>
     </div>
 
-    <!-- GAMES -->
+    <!-- GAMES SEKCIJA -->
     <div id="games-sekcija" class="sub-section" style="display:none;">
-        <button class="back-btn" onclick="nazad()">← NAZAD</button>
+        <button class="back-btn" onclick="nazad()">← NAZAD NA POČETNU</button>
         <div class="products-grid">
-            <div class="product-card"><h3>GTA V Premium</h3><p>Pošaljite upit na email</p></div>
-            <div class="product-card"><h3>FC 24 (FIFA)</h3><p>Pošaljite upit na email</p></div>
+            <div class="product-card">
+                <img src="" alt="GTA V" class="product-img">
+                <h3>GTA V Premium</h3>
+                <div class="product-description">
+                    <p>Puna verzija igre sa dodatkom Criminal Enterprise Starter Pack i 1,000,000$ gotovine za GTA Online. Dostupno odmah.</p>
+                </div>
+            </div>
+            <!-- Dodaj ostalih 19 igara -->
         </div>
     </div>
 
@@ -58,9 +84,7 @@
             document.getElementById(id).style.display = 'block';
         }
         function nazad() {
-            document.getElementById('windows-sekcija').style.display = 'none';
-            document.getElementById('office-sekcija').style.display = 'none';
-            document.getElementById('games-sekcija').style.display = 'none';
+            document.querySelectorAll('.sub-section').forEach(s => s.style.display = 'none');
             document.getElementById('main-menu').style.display = 'flex';
         }
     </script>
